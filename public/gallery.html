@@ -1,47 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="output.css">
-</head>
-<body>
-     <header class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlmaMater Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
         <h1 class="text-xl font-bold text-blue-600">AlmaMater</h1>
 
-        <nav class="hidden md:flex  font-medium space-x-10 ml-50">
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex font-medium gap-10">
           <a href="./index.html">Home</a>
           <a href="./about.html">About</a>
           <a href="./programes.html">Programs</a>
-          <a href="./news.html"> News</a>
+          <a href="./news.html">News</a>
           <a href="./gallery.html">Gallery</a>
           <a href="./contact.html">Contact</a>
-           <button class="bg-blue-600 text-white px-3.75 py-2 rounded-lg">
-            <a href="">APPLY NOW</a>
-          </button>
+          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg"
+            >APPLY NOW</a
+          >
         </nav>
 
+        <!-- Mobile Menu Button -->
         <button id="menuBtn" class="md:hidden text-2xl">☰</button>
       </div>
 
-      <div id="mobileMenu" class="hidden px-4 pb-4 md:hidden">
+      <!-- Mobile Nav -->
+      <div id="mobileMenu" class="hidden px-4 pb-4 md:hidden bg-white shadow">
         <a href="./index.html" class="block py-2">Home</a>
         <a href="./about.html" class="block py-2">About</a>
         <a href="./programes.html" class="block py-2">Programs</a>
-        <a href="./news.html"class="block py-2"> News</a>
+        <a href="./news.html" class="block py-2">News</a>
         <a href="./gallery.html" class="block py-2">Gallery</a>
         <a href="./contact.html" class="block py-2">Contact</a>
       </div>
     </header>
-     <script>
-      const btn = document.getElementById("menuBtn");
-      const menu = document.getElementById("mobileMenu");
 
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+    <main>
+      <!-- Gallery Section -->
+      <section class="pt-28 px-6 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-800">Our Gallery</h2>
+          <p class="text-gray-500 mt-3 max-w-2xl mx-auto">
+            Explore moments of excellence, creativity, and achievements in our
+            school community.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex justify-center gap-4 mb-10 flex-wrap">
+          <button
+            class="filter-btn bg-blue-600 text-white px-5 py-2 rounded-full"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn bg-gray-200 px-5 py-2 rounded-full"
+            data-filter="events"
+          >
+            Events
+          </button>
+          <button
+            class="filter-btn bg-gray-200 px-5 py-2 rounded-full"
+            data-filter="students"
+          >
+            Students
+          </button>
+          <button
+            class="filter-btn bg-gray-200 px-5 py-2 rounded-full"
+            data-filter="facilities"
+          >
+            Facilities
+          </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div
+          id="gallery"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        >
+          <!-- Event -->
+          <div class="gallery-item" data-category="events">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">School Event</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Students -->
+          <div class="gallery-item" data-category="students">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">Students Activity</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facilities -->
+          <div class="gallery-item" data-category="facilities">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">School Building</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- More Events -->
+          <div class="gallery-item" data-category="events">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">Cultural Day</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- More Students -->
+          <div class="gallery-item" data-category="students">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1600195077909-46e573870d99?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">Classroom</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- More Facilities -->
+          <div class="gallery-item" data-category="facilities">
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800"
+                class="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+              >
+                <p class="text-white font-semibold">Library</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Gallery Filter
+      const buttons = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".gallery-item");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Reset button styles
+          buttons.forEach((b) => {
+            b.classList.remove("bg-blue-600", "text-white");
+            b.classList.add("bg-gray-200");
+          });
+
+          // Active button
+          button.classList.add("bg-blue-600", "text-white");
+
+          const filter = button.getAttribute("data-filter");
+
+          items.forEach((item) => {
+            if (filter === "all" || item.dataset.category === filter) {
+              item.classList.remove("hidden");
+            } else {
+              item.classList.add("hidden");
+            }
+          });
+        });
       });
     </script>
-</body>
+  </body>
 </html>
